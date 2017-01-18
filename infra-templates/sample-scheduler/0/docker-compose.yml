@@ -1,0 +1,13 @@
+version: '2'
+services:
+  scheduler:
+    image: cjellick/sample-scheduler:v0.1.0
+    command: sample-scheduler
+    labels:
+        io.rancher.container.create_agent: "true"
+        io.rancher.container.agent_service.scheduling: "true"
+    logging:
+      driver: json-file
+      options:
+        max-size: 25m
+        max-file: '2'
